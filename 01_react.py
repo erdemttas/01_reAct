@@ -13,8 +13,6 @@ os.environ["TAVILY_API_KEY"] = os.getenv("tavily_apikey")
 llm_openai = ChatOpenAI(model="gpt-3.5-turbo", api_key=mykey_openai)
 
 tools = [TavilySearchResults(max_results=1)]
-
-#prompt = hub.pull("emreyz/react-turkce")
 prompt = hub.pull("hwchase17/react")
 
 agent = create_react_agent(llm_openai, tools, prompt)
